@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: deutsches-recht-mcp
+    runtime: docker
+    plan: starter
+    region: frankfurt
+    healthCheckPath: /health
+    envVars:
+      - key: MCP_PATH_SECRET
+        generateValue: true
+      - key: OLDP_API_TOKEN
+        sync: false
